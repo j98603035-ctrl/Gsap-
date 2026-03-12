@@ -1,12 +1,15 @@
-var h1 = document.querySelector("h1").textContent
+function breaktext() {
+    var h1 = document.querySelector("h1")
+    var h1text = h1.textContent
+    var splittedtext = h1text.split("")
 
-var splittedtext = h1.split("")
+    var clutter = ""
 
-var clutter = ""
+    splittedtext.forEach(function (elem) {
+        clutter += `<span>${elem}</span>`
+    })
 
-splittedtext.forEach(function () {
-    clutter=clutter+"hey"
+    h1.innerHTML = clutter
+}
 
-})
-
-console.log(clutter)
+breaktext()
